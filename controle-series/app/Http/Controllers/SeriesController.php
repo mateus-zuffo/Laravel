@@ -8,13 +8,11 @@ use App\Serie;
 class SeriesController extends Controller
 {
     public function index() {
-        $series = [
-            'Grey\'s Anatomy',
-            'Lost',
-            'Agents of SHIELD'
-        ];
-
-        return view('series.index', compact('series'));
+        $series = Serie::all();
+        var_dump($series);
+        exit();
+    
+        return view('series.index', compact('series'));        
     }
 
     public function create()
