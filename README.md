@@ -6,11 +6,11 @@ Módulos 1/6
 02. MVC - Controllers           ✔
 03. MVC - View                  ✔
 04. MVC - Model                 ✔
-05. 6/11 Lapidando a aplicação  
+05. 8/11 Lapidando a aplicação  
 06. 0/9  Validando os dados
 
 Eloquent
 redirect
 Flash message
 
-última atualização: 29/08/21
+última atualização: 01/09/21
