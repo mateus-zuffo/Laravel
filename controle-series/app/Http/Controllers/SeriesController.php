@@ -7,10 +7,11 @@ use App\Serie;
 
 class SeriesController extends Controller
 {
-    public function index() {
-        $series = Serie::all();
+    public function index(Request $request) {
+        $series = Serie::all()->sortBy('nome');
+        $mensagem = $request->session()->get(key: 'mensagem');
     
-        return view('series.index', compact('series'));        
+        return view('series.index', compact('series', 'mensagem'));        
     }
 
     public function create()
@@ -20,7 +21,17 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $serie = Serie::create($request->all());        
-        echo "Série com id ($serie->id) criada: ($serie->nome)";
+        $serie = Serie::create($request->all());   
+        $request->session()
+        ->flash(
+            'mensagem', 
+            "Série {$serie->id} criada com sucesso {$serie->nome}"
+        );
+        return redirect('/series');
+    }
+
+    public function destroy(Request $request)
+    {
+        echo $request->id;
     }
 }
