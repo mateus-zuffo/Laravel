@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Serie;
+use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
 {
@@ -19,7 +20,7 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
         $serie = Serie::create($request->all());   
         $request->session()
@@ -27,7 +28,7 @@ class SeriesController extends Controller
             'mensagem', 
             "Série {$serie->id} criada com sucesso {$serie->nome}"
         );
-        return redirect('/series');
+        return redirect()->route('listar_series');
     }
 
     public function destroy(Request $request)
@@ -39,6 +40,6 @@ class SeriesController extends Controller
             "Série removida com sucesso"
         );
         
-        return redirect('/series');
+        return redirect()->route('listar_series');
     }
 }
