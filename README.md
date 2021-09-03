@@ -1,57 +1,43 @@
-# Laravel
-Curso de Laravel oferecido pela Alura e dividido em 3 partes:
-Parte 1: https://cursos.alura.com.br/course/laravel-produtividade-desenvolvimento-web
-Parte 2: https://cursos.alura.com.br/course/laravel-autenticacao-relacionamentos-testes
+# Controle de Séries
+Curso da Alura de Laravel dividido em 3 partes: 
+Parte 1: https://cursos.alura.com.br/course/laravel-produtividade-desenvolvimento-web 
+Parte 2: https://cursos.alura.com.br/course/laravel-autenticacao-relacionamentos-testes 
 Parte 3: https://cursos.alura.com.br/course/laravel-eventos-filas-upload-email
 
 Configuração Inicial
-1. Download PHP na versão 8.0
-https://www.php.net/downloads.php#gpg-7.3
+1. Download PHP na versão 8.0. segue o link abaixo:
+    https://www.php.net/downloads
 
-2. Deszipar arquivo baixado
+2. Extrair o arquivo baixado
+
 3. Editar variáveis de ambiente
+    (IMG 1)
 
-4.
+4. Editar a opção Path
+    (IMG 2)
 
-5.
-6.
-7.
+5. Adicionar o caminho do php que foi extraído
+    (IMG 3)
 
+6. Verifique se deu certo abrindo o CMD e digitando php -v
+    (IMG 4)
 
+7. Download do Composer, segue o link abaixo:
+    https://getcomposer.org/
 
+8. Baixar/clonar este projeto no diretório local
+ 
+9. Através do cmd, entre na pasta do projeto baixado e digite os seguintes comandos:
+    9.1 para instalar o composer no projeto rode o comando:
+        composer install
+    9.2 para realizar as alterações no banco de dados 
+        php artisan migrate
+    9.3 para subir a aplicação
+        php artisan serve
 
-# Anotações
-Laravel 1/3
-Curso de Laravel da Alura, Parte 1 de 3
-
-Parte 1 - Módulos
-01. Conhecendo o Laravel     ✔
-02. MVC - Controllers        ✔
-03. MVC - View               ✔
-04. MVC - Model              ✔
-05. Lapidando a aplicação    ✔
-06. Validando os dados       ✔
-
-Palavras Chave:
-01. Rotas; 02. Request; 03. View; 03. Blade; 04. Migration; 04. Eloquent; 05. Redirect; 05. Flash message; 05. Nomear rotas; 06. Validate; 06. make request (para validar);
-
----
-
-Laravel 2/3
-Curso de Laravel da Alura, Parte 2 de 3
-
-Parte 2 - Módulos
-01. Relacionamento no modelo 2/9
-02. Novo controller e view 0/6
-03. Usar serviços para exclusão 0/11
-04. Edição da série 0/6
-05. Assistindo Episódios 0/14
-06. Autenticando o usuário 0/11
-07. Protegendo rotas e ações 0/9
-08. Testes automatizados 0/16
-
-Palavras Chave:
-01.
-
-última atualização: 02/09/21
+10. Após subir a aplicação, para acessa-la basta iniciar o navegador e inserir o endereço do artisan, assim como no exemplo abaixo:
+    (IMG 5)
+    (IMG 6)
+    ou se preferir use o localhost:
+    (IMG 7)
 
