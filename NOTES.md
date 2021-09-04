@@ -53,7 +53,7 @@ buscar uma série
     <li> Serie::find($serieId)->temporadas; </li>
 </ul>
 
-última atualização: 02/09/21
+última atualização: 04/09/21
 
 ---
 ## Laravel 3/3
