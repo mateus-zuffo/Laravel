@@ -31,18 +31,28 @@ Palavras Chave:
 01. Relacionamento entre modelos, migrations
 
 Criando modelo(make:model) e migration(-m) para o objeto:
-    php artisan make:model Temporada -m
-    php artisan make:model Episodio -m
+<ul>
+    <li> php artisan make:model Temporada -m </li>
+    <li> php artisan make:model Episodio -m </li>
+</ul>
+
 
 Rodando as migrations
-    php artisan migrate
+<ul>
+    <li>php artisan migrate</li>
+</ul>
 
 criando um controller
-    php artisan make:controller TemporadasController
+<ul>
+   <li> php artisan make:controller TemporadasController</ul>
+</ul>
 
 buscar uma série
-    use App\Models\Serie;
-    Serie::find($serieId)->temporadas;
+<ul>
+    <li> use App\Models\Serie; </li>
+    <li> Serie::find($serieId)->temporadas; </li>
+</ul>
+
 última atualização: 02/09/21
 
 ---
