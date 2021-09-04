@@ -19,8 +19,8 @@ Módulos e Palavras Chave:
 
 ### Parte 2 - Módulos
 - [x] 01. Relacionamento no modelo
-- [ ] 02. 3/6 Novo controller e view 
-- [ ] 03. 0/11 Usar serviços para exclusão 
+- [x] 02. Novo controller e view 
+- [ ] 03. 6/11 Usar serviços para exclusão 
 - [ ] 04. 0/6 Edição da série 
 - [ ] 05. 0/14 Assistindo Episódios 
 - [ ] 06. 0/11 Autenticando o usuário 
