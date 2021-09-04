@@ -45,3 +45,7 @@ buscar uma série
     Serie::find($serieId)->temporadas;
 última atualização: 02/09/21
 
+---
+## Laravel 3/3
+
+---
