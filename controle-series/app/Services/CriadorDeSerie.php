@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Serie;
+use NunoMaduro\Collision\Adapters\Phpunit\TestResult;
 
 class CriadorDeSerie
 {
@@ -16,6 +17,7 @@ class CriadorDeSerie
             for ($j = 1; $j <= $epPorTemporada; $j++) {
                 $temporada->episodios()->create(['numero' => $j]);
             }
+            
         }
     
         return $serie;
