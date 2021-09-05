@@ -20,9 +20,9 @@ Módulos e Palavras Chave:
 ### Parte 2 - Módulos
 - [x] 01. Relacionamento no modelo
 - [x] 02. Novo controller e view 
-- [ ] 03. 6/11 Usar serviços para exclusão 
-- [ ] 04. 0/6 Edição da série 
-- [ ] 05. 0/14 Assistindo Episódios 
+- [x] 03. Usar serviços para exclusão 
+- [x] 04. Edição da série 
+- [ ] 05. 5/14 Assistindo Episódios 
 - [ ] 06. 0/11 Autenticando o usuário 
 - [ ] 07. 0/9 Protegendo rotas e ações 
 - [ ] 08. 0/16 Testes automatizados 
@@ -53,7 +53,18 @@ buscar uma série
     <li> Serie::find($serieId)->temporadas; </li>
 </ul>
 
-última atualização: 04/09/21
+garantir que uma transação de banco de dados dê certo (caso complexo de mais de uma transação):
+    DB::transaction(function(){});
+    DB::beginTransaction();
+    DB::commit();
+
+migration cria as regras para manipular a tabela: (tem que executar)
+    php artisan make:migration nome_da_migration --comentario
+executa as regras das migrations
+    php artisan migrate
+
+
+última atualização: 05/09/21
 
 ---
 ## Laravel 3/3
