@@ -5,11 +5,8 @@ Séries
 @endsection
 
 @section('conteudo')
-    @if(!empty($mensagem))
-    <div class="alert alert-success" role="alert">
-        {{ $mensagem }}
-    </div>
-    @endif
+    @include('mensagem', ['mensagem' => $mensagem])
+    
 <a href="{{ route('form_criar_serie')}}" class="btn btn-dark mb-2">Adicionar</a>
 
 <ul class="list-group">
@@ -76,8 +73,7 @@ Séries
             toggleInput(serieId);
             document.getElementById(`nome-serie-${serieId}`).textContent = nome;
         });
-    }
-} 
+    }     
 </script> 
 
 @endsection

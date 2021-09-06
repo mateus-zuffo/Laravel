@@ -22,8 +22,8 @@ Módulos e Palavras Chave:
 - [x] 02. Novo controller e view 
 - [x] 03. Usar serviços para exclusão 
 - [x] 04. Edição da série 
-- [ ] 05. 5/14 Assistindo Episódios 
-- [ ] 06. 0/11 Autenticando o usuário 
+- [x] 05. Assistindo Episódios 
+- [ ] 06. 4/11 Autenticando o usuário 
 - [ ] 07. 0/9 Protegendo rotas e ações 
 - [ ] 08. 0/16 Testes automatizados 
 
@@ -59,13 +59,30 @@ garantir que uma transação de banco de dados dê certo (caso complexo de mais 
     DB::commit();
 
 migration cria as regras para manipular a tabela: (tem que executar)
-    php artisan make:migration nome_da_migration --comentario
+    php artisan make:migration nome_da_migration --table=tabela
 executa as regras das migrations
     php artisan migrate
 
-
+retornar para a última página
+    return redirect()->back();
 última atualização: 05/09/21
 
+método filter foi criado dentro do model e depois teve um contador pra pegar a collection retornada por ele
+    public function getEpisodiosAssistidos() : Collection
+    {
+        return $this->episodios->filter(function (Episodio $episodio){
+            return $episodio->assistido;
+        });
+    }
+
+//fudeo
+    php artisan make:auth
+
+---
+A rota é chamada pelo caminho informado nela (pode ser por uma tela ou requisição), 
+A rota chama o controller, 
+O controller faz o que é necessário (cálculo, regra de negócio, etc) e retorna o que é esperado, podendo chamar a view/front passando as variáveis que usará, retornar nulo, etc
+(se necessário o controller chama um service para executar uma ação mais complexa e o código não ficar inteiro no Controller)
 ---
 ## Laravel 3/3
 

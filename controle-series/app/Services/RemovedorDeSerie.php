@@ -17,7 +17,6 @@ class RemovedorDeSerie
             $serie->delete();
         });
         return $nomeSerie;
-
     }
 
     public function removerTemporadas(Serie $serie): void
