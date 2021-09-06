@@ -79,10 +79,12 @@ método filter foi criado dentro do model e depois teve um contador pra pegar a 
     php artisan make:auth
 
 ---
+
 A rota é chamada pelo caminho informado nela (pode ser por uma tela ou requisição), 
 A rota chama o controller, 
 O controller faz o que é necessário (cálculo, regra de negócio, etc) e retorna o que é esperado, podendo chamar a view/front passando as variáveis que usará, retornar nulo, etc
 (se necessário o controller chama um service para executar uma ação mais complexa e o código não ficar inteiro no Controller)
+
 ---
 ## Laravel 3/3
 
