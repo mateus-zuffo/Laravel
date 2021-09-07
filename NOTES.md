@@ -23,9 +23,9 @@ Módulos e Palavras Chave:
 - [x] 03. Usar serviços para exclusão 
 - [x] 04. Edição da série 
 - [x] 05. Assistindo Episódios 
-- [ ] 06. 4/11 Autenticando o usuário 
-- [ ] 07. 0/9 Protegendo rotas e ações 
-- [ ] 08. 0/16 Testes automatizados 
+- [ ] 06. Autenticando o usuário (Auth)
+- [ ] 07. Protegendo rotas e ações (Middleware)
+- [ ] 08. 4/16 Testes automatizados (PHPUnit)
 
 Palavras Chave:
 01. Relacionamento entre modelos, migrations
