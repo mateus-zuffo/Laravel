@@ -25,7 +25,7 @@ Módulos e Palavras Chave:
 - [x] 05. Assistindo Episódios 
 - [ ] 06. Autenticando o usuário (Auth)
 - [ ] 07. Protegendo rotas e ações (Middleware)
-- [ ] 08. 4/16 Testes automatizados (PHPUnit)
+- [ ] 08. 5/16 Testes automatizados (PHPUnit)
 
 Palavras Chave:
 01. Relacionamento entre modelos, migrations
@@ -75,7 +75,14 @@ método filter foi criado dentro do model e depois teve um contador pra pegar a 
         });
     }
 
-//fudeo
+criar teste
+    php artisan make:test nome --unit
+
+rodar teste
+    vendo\bin\phpunit
+
+
+### Pendência
     php artisan make:auth
 
 ---
