@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 use App\Models\{Episodio,Temporada};
 
 class TemporadaTest extends TestCase
@@ -28,8 +28,8 @@ class TemporadaTest extends TestCase
 
     public function testBuscaPorEpisodiosAssistidos()
     {
-       $episodiosAssistidos = $this->temporada->getEpisodiosAssistidos();
-       $this->assertCount(2, $episodiosAssistidos);
+        $episodiosAssistidos = $this->temporada->getEpisodiosAssistidos();
+        $this->assertCount(2, $episodiosAssistidos);
         foreach ($episodiosAssistidos as $episodio) {
             $this->assertTrue($episodio->assistido);
         }

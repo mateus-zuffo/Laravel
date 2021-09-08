@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controller\Auth;
+// use App\Http\Controller\Auth;
+
+use App\Models\Serie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EntrarController extends Controller
 {
@@ -32,6 +35,24 @@ class EntrarController extends Controller
         }
         return $autenticacao;
         
+    }
+
+    public function Autenticacao(string $email, string $password){
+        Auth::attempt(['email' => $email, 'password' => $password]);
+    }
+
+    public function teste(Request $request) {
+        if (!Auth::check()) {
+            echo "Não autenticado";
+            exit();
+    
+        }
+        $series = Serie::query()
+            ->orderBy('nome')
+            ->get();
+        $mensagem = $request->session()->get('mensagem');
+    
+        return view('series.index', compact('series', 'mensagem'));
     }
 
     public function sair(){
