@@ -23,8 +23,8 @@ Módulos e Palavras Chave:
 - [x] 03. Usar serviços para exclusão 
 - [x] 04. Edição da série 
 - [x] 05. Assistindo Episódios 
-- [ ] 06. Autenticando o usuário (Auth)
-- [ ] 07. Protegendo rotas e ações (Middleware)
+- [x] 06. Autenticando o usuário
+- [x] 07. Protegendo rotas e ações (Middleware)
 - [ ] 08. 5/16 Testes automatizados (PHPUnit)
 
 Palavras Chave:
@@ -78,6 +78,8 @@ método filter foi criado dentro do model e depois teve um contador pra pegar a 
 criar teste
     php artisan make:test nome --unit
 
+usar o Hash para criptografar
+    Hash::make($var);
 rodar teste
     vendo\bin\phpunit
 

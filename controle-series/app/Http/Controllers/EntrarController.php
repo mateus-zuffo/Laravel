@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Serie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EntrarController extends Controller
 {
@@ -17,28 +18,11 @@ class EntrarController extends Controller
     
     public function entrar(Request $request)
     {
-        $request->only(['email', 'password']);
-        $email = $request->email;
-        $password = $request->password;
-        if($this->AutenticacaoFalsa($email,$password)){
+        if(Auth::attempt($request->only(['email', 'password']))){
             return redirect()->route('listar_series');
         } else{
             return redirect()->back()->withErrors('Usuário incorreto');
         }
-    }
-
-    public function AutenticacaoFalsa(string $email, string $password)
-    {
-        $autenticacao = false;
-        if($email == 'teste@gmail.com' && $password == '1'){
-            $autenticacao = true;
-        }
-        return $autenticacao;
-        
-    }
-
-    public function Autenticacao(string $email, string $password){
-        Auth::attempt(['email' => $email, 'password' => $password]);
     }
 
     public function teste(Request $request) {
@@ -56,7 +40,8 @@ class EntrarController extends Controller
     }
 
     public function sair(){
-        return view('entrar.index');
+        Auth::logout();
+        return redirect()->route('entrar');
     }
         
 }
