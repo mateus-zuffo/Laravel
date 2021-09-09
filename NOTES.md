@@ -25,10 +25,8 @@ Módulos e Palavras Chave:
 - [x] 05. Assistindo Episódios 
 - [x] 06. Autenticando o usuário
 - [x] 07. Protegendo rotas e ações (Middleware)
-- [ ] 08. 5/16 Testes automatizados (PHPUnit)
+- [x] 08. 5/16 Testes automatizados (PHPUnit)
 
-Palavras Chave:
-01. Relacionamento entre modelos, migrations
 
 Criando modelo(make:model) e migration(-m) para o objeto:
 <ul>

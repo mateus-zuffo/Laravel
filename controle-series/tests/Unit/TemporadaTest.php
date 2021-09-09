@@ -4,9 +4,10 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\{Episodio,Temporada};
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
 class TemporadaTest extends TestCase
 {
+    use RefreshDatabase;
     private $temporada;
 
     protected function setUp(): void
