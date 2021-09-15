@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{SeriesController,TemporadasController,EpisodiosController,EntrarController, RegistroController};
+use App\Http\Controllers\{SeriesController,TemporadasController,EpisodiosController,EntrarController, RegistroController,Email};
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,8 @@ Route::get('/', function () {
 Route::get('/series',[SeriesController::class, 'index'])->name('listar_series');
 Route::get('/series/criar',[SeriesController::class, 'create'])->name('form_criar_serie')->middleware('auth');
 Route::post('/series/criar',[SeriesController::class, 'store'])->middleware('auth');
-Route::delete('/series/remover/{id}',[SeriesController::class, 'destroy'])->middleware('auth');
 Route::post('/series/{id}/editaNome',[SeriesController::class, 'editaNome'])->middleware('auth');
+Route::delete('/series/remover/{id}',[SeriesController::class, 'destroy'])->middleware('auth');
 
 Route::get('/series/{serieId}/temporadas',[TemporadasController::class, 'index']);
 
@@ -30,8 +30,11 @@ Route::get('/temporadas/{temporada}/episodios',[EpisodiosController::class, 'ind
 Route::post('/temporadas/{temporada}/episodios/assistir',[EpisodiosController::class, 'assistir'])->middleware('auth');
 
 Route::get('/entrar' , [EntrarController::class, 'index'])->name('entrar');
-Route::post('/entrar' , [EntrarController::class, 'entrar']);
 Route::get('/sair' , [EntrarController::class, 'sair']);
+Route::post('/entrar' , [EntrarController::class, 'entrar']);
 
 Route::get('/registrar' , [RegistroController::class, 'create']);
 Route::post('/registrar' , [RegistroController::class, 'store']);
+
+Route::get('/visualizando-email' , [Email::class, 'visualizandoEmail']);
+Route::get('/enviando-email' , [Email::class, 'enviaEmail']);
