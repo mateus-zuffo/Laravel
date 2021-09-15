@@ -1,4 +1,4 @@
-
+# Acompanhamento
 ## Laravel 1/3
 
 ### Parte 1 - Módulos ✔
@@ -20,13 +20,13 @@
 - [x] 05. Assistindo Episódios 
 - [x] 06. Autenticando o usuário
 - [x] 07. Protegendo rotas e ações (Middleware)
-- [x] 08. 5/16 Testes automatizados (PHPUnit)
+- [x] 08. Testes automatizados (PHPUnit)
 
 
 ## Laravel 3/3
 
-### Parte 2 - Módulos
-- [ ] 01. Template de e-mail
+### Parte 3 - Módulos
+- [x] 01. Template de e-mail
 - [ ] 02. Envio de e-mail
 - [ ] 03. Processando dados com filas
 - [ ] 04. Trabalhando com eventos
@@ -146,5 +146,5 @@ O controller faz o que é necessário (cálculo, regra de negócio, etc) e retor
 
 
 ---
-### Última atualização: 13/09/21---
+### Última atualização: 13/09/21
 
