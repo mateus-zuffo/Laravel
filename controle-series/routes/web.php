@@ -36,5 +36,5 @@ Route::post('/entrar' , [EntrarController::class, 'entrar']);
 Route::get('/registrar' , [RegistroController::class, 'create']);
 Route::post('/registrar' , [RegistroController::class, 'store']);
 
-Route::get('/visualizando-email' , [Email::class, 'visualizandoEmail']);
-Route::get('/enviando-email' , [Email::class, 'enviaEmail']);
+//Route::get('/visualizando-email' , [EmailController::class, 'visualizandoEmail'];
+Route::get('/enviando-email' , [EmailController::class, 'enviaEmail']);

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\SeriesFormRequest;
+use App\Mail\NovaSerie;
 use App\Services\CriadorDeSerie;
 use App\Services\RemovedorDeSerie;
+use App\Http\Controllers\EmailController;
 use App\Models\{Serie, Temporada, Episodio};
 
 class SeriesController extends Controller
@@ -24,20 +26,26 @@ class SeriesController extends Controller
 
     public function store(SeriesFormRequest $request, CriadorDeSerie $criadorDeSerie)
     {
+        $nome = $request->nome;
+        $qtd_temporadas = $request->qtd_temporadas;
+        $ep_por_temporada = $request->ep_por_temporada;
+
         $serie = $criadorDeSerie->criarSerie(
-            $request->nome, 
-            $request->qtd_temporadas, 
-            $request->ep_por_temporada
+            $nome, 
+            $qtd_temporadas, 
+            $ep_por_temporada
         );
         $request->session()
             ->flash(
                 'mensagem',
-                "Série {$request->nome} com {$request->qtd_temporadas} temporadas e {$request->ep_por_temporada} episódios criados com sucesso"
-            );
-    
+                "Série {$nome} com {$qtd_temporadas} temporadas e {$ep_por_temporada} episódios criados com sucesso"
+            );    
+        $email = new EmailController();
+        $subject = 'Nova série adicionada';
+        $email->enviaEmail($nome,$qtd_temporadas,$ep_por_temporada,$subject);
+        
         return redirect()->route('listar_series');
     }
-
     public function destroy(Request $request, RemovedorDeSerie $removedorDeSerie) 
         {
         $nomeSerie = $removedorDeSerie->removerSerie($request->id);

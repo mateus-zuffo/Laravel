@@ -13,12 +13,14 @@ class NovaSerie extends Mailable
     public $nome;
     public $qtDeTemporadas;
     public $qtDeEpisodios;
+    public $subject;
 
-    public function __construct($nome,$qtDeTemporadas,$qtDeEpisodios)
+    public function __construct($nome,$qtDeTemporadas,$qtDeEpisodios, $subject)
     {
-        $this->nome          = $nome;
+        $this->nome           = $nome;
         $this->qtDeTemporadas = $qtDeTemporadas;
         $this->qtDeEpisodios  = $qtDeEpisodios;
+        $this->$subject       = $subject;
     }
 
     /**
