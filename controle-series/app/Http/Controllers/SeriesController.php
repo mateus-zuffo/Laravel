@@ -8,7 +8,7 @@ use App\Mail\NovaSerie;
 use App\Services\CriadorDeSerie;
 use App\Services\RemovedorDeSerie;
 use App\Http\Controllers\EmailController;
-use App\Models\{Serie, Temporada, Episodio};
+use App\Models\{Serie, Temporada, Episodio, User};
 
 class SeriesController extends Controller
 {
@@ -42,7 +42,11 @@ class SeriesController extends Controller
             );    
         $email = new EmailController();
         $subject = 'Nova série adicionada';
-        $email->enviaEmail($nome,$qtd_temporadas,$ep_por_temporada,$subject);
+        $users = User::all();
+        foreach($users as $user){
+            $email->enviaEmail($nome,$qtd_temporadas,$ep_por_temporada,$subject, $user);
+            sleep(5);
+        }
         
         return redirect()->route('listar_series');
     }
