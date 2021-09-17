@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailController extends Controller
 {
-    public function enviaEmail($nome,$qtTemporadas,$qtEpisodios,$subject, $user = null)
+    public function enviaEmail($nome,$qtTemporadas,$qtEpisodios,$subject,$tempo, $user = null)
     {  
         if($user == null){
             $user = (object)[
@@ -18,7 +18,8 @@ class EmailController extends Controller
         }
         $email = new NovaSerie($nome,$qtTemporadas,$qtEpisodios,$subject);
         $email->subject = $subject;
-        Mail::to($user)->send($email);
+        $temporizador = now()->addSeconds($tempo*10);
+        Mail::to($user)->later($temporizador, $email);
 
         return 'Email enviado';
     }

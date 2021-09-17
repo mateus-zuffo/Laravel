@@ -28,7 +28,7 @@
 ### Parte 3 - Módulos
 - [x] 01. Template de e-mail
 - [x] 02. Envio de e-mail
-- [ ] 03. Processando dados com filas
+- [x] 03. Processando dados com filas
 - [ ] 04. Trabalhando com eventos
 - [ ] 05. Upload de arquivos
 - [ ] 06. Usando jobs
@@ -110,8 +110,29 @@ O controller faz o que é necessário (cálculo, regra de negócio, etc) e retor
 
 ### Parte 3
 Criar tabela para usar como fila
-php artisan queue:table
-php artisan migrate
+    php artisan queue:table
+    php artisan migrate
+
+-
+Verificar lista de tarefas
+    dev: php artisan queue:listen
+    prod: php artisan queue:work
+
+Verificar lista de tarefas que falharam
+    php artisan queue:failed
+
+Reexecutar as tarefas que falharam
+    php artisan queue:retry ID
+    php artisan queue:retry all
+
+
+Verificar BD
+    php artisan tinker
+    \DB::select('Select * from TABELA');
+
+Criar evento
+    php artisan make:event NOME_DO_EVENTO
+
 ---
 ### Última atualização: 16/09/21
 

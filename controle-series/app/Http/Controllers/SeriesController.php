@@ -43,9 +43,10 @@ class SeriesController extends Controller
         $email = new EmailController();
         $subject = 'Nova série adicionada';
         $users = User::all();
+        $tempo = 1;
         foreach($users as $user){
-            $email->enviaEmail($nome,$qtd_temporadas,$ep_por_temporada,$subject, $user);
-            sleep(5);
+            $email->enviaEmail($nome, $qtd_temporadas, $ep_por_temporada, $subject, $tempo, $user);
+            $tempo = $tempo +1;
         }
         
         return redirect()->route('listar_series');
