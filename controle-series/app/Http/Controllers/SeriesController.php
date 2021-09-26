@@ -42,6 +42,8 @@ class SeriesController extends Controller
             );    
         $email = new EmailController();
         $subject = 'Nova série adicionada';
+
+ 
         $users = User::all();
         $tempo = 1;
         foreach($users as $user){
