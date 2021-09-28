@@ -110,28 +110,28 @@ O controller faz o que é necessário (cálculo, regra de negócio, etc) e retor
 
 ### Parte 3
 Criar tabela para usar como fila
-    php artisan queue:table
-    php artisan migrate
+- php artisan queue:table
+- php artisan migrate
 
--
 Verificar lista de tarefas
-    dev: php artisan queue:listen
-    prod: php artisan queue:work
+- dev: php artisan queue:listen
+- prod: php artisan queue:work
 
 Verificar lista de tarefas que falharam
-    php artisan queue:failed
+- php artisan queue:failed
 
 Reexecutar as tarefas que falharam
-    php artisan queue:retry ID
-    php artisan queue:retry all
-
+- php artisan queue:retry ID
+- php artisan queue:retry all
 
 Verificar BD
-    php artisan tinker
-    \DB::select('Select * from TABELA');
+- php artisan tinker
+- \DB::select('Select * from TABELA');
 
 Criar evento
-    php artisan make:event NOME_DO_EVENTO
+- php artisan make:event NOME_DO_EVENTO
+
+
 
 ---
 ### Última atualização: 16/09/21
