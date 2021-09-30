@@ -13,15 +13,19 @@ use Illuminate\Queue\SerializesModels;
 class NovaSerie
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
+    public $nomeSerie;
+    public $qtdTemporadas;
+    public $qtdEpisodios;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($nomeSerie, $qtdTemporadas, $qtdEpisodios)
     {
-        //
+        $this->nomeSerie = $nomeSerie;
+        $this->qtdTemporadas = $qtdTemporadas;
+        $this->qtdEpisodios = $qtdEpisodios;
     }
 
     /**

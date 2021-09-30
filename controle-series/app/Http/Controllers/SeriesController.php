@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NovaSerie as EventsNovaSerie;
 use Illuminate\Http\Request;
 use App\Http\Requests\SeriesFormRequest;
 use App\Mail\NovaSerie;
@@ -42,8 +43,9 @@ class SeriesController extends Controller
             );    
         $email = new EmailController();
         $subject = 'Nova série adicionada';
-
- 
+        
+        $eventonovaSerie = new EventsNovaSerie($nome, $qtd_temporadas, $ep_por_temporada);
+        event($eventonovaSerie);
         $users = User::all();
         $tempo = 1;
         foreach($users as $user){
