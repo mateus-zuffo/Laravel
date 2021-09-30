@@ -131,8 +131,11 @@ Verificar BD
 Criar evento
 - php artisan make:event NOME_DO_EVENTO
 
+Criar evento
+- php artisan make:listener NOME_DO_LISTENER -e NovaSerie
+
 
 
 ---
-### Última atualização: 16/09/21
+### Última atualização: 29/09/21
 
