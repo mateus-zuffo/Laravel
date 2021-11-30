@@ -29,9 +29,9 @@
 - [x] 01. Template de e-mail
 - [x] 02. Envio de e-mail
 - [x] 03. Processando dados com filas
-- [ ] 04. Trabalhando com eventos
-- [ ] 05. Upload de arquivos
-- [ ] 06. Usando jobs
+- [x] 04. Trabalhando com eventos
+- [x] 05. Upload de arquivos
+- [x] 06. Usando jobs
 
 
 # Anotações
@@ -137,5 +137,5 @@ Criar evento
 
 
 ---
-### Última atualização: 29/09/21
+### Última atualização: 30/11/21
 
